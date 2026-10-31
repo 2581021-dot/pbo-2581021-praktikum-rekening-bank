@@ -7,5 +7,26 @@ public class BankMini {
 
         System.out.println("============ BANK MINI ============");
         System.out.println("Rekening " + rekening.getNomor() + " a.n. " + rekening.getPemilik());
+
+
+        int pilihan;
+        do {
+            System.out.print("Menu (1 setor, 2 tarik, 3 info, 0 keluar): ");
+            pilihan = input.nextInt();
+
+            if (pilihan == 1) {
+                System.out.print("Jumlah: ");
+                int jumlah = input.nextInt();
+                System.out.println(rekening.setor(jumlah) ? "  Berhasil" : "  Ditolak");
+            } else if (pilihan == 2) {
+                System.out.print("Jumlah: ");
+                int jumlah = input.nextInt();
+                System.out.println(rekening.tarik(jumlah) ? "  Berhasil" : "  Ditolak");
+            } else if (pilihan == 3) {
+                rekening.cetakInfo();
+            } else if (pilihan != 0) {
+                System.out.println("Menu tidak dikenal");
+            }
+        } while (pilihan != 0);
     }
 }
