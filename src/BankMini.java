@@ -6,7 +6,7 @@ public class BankMini {
         Rekening rekening = new Rekening("001", "Ani", 100000);
 
         //Error: java: saldo has private access in Rekening
-        rekening.saldo = 1000000;
+        //rekening.saldo = 1000000;
 
         System.out.println("============ BANK MINI ============");
         System.out.println("Rekening " + rekening.getNomor() + " a.n. " + rekening.getPemilik());
