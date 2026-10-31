@@ -20,6 +20,7 @@ public class Rekening {
     public int getSaldo() {
         return saldo;
     }
+
     public boolean setor(int jumlah) {
         if (jumlah <= 0) {
             return false;
@@ -34,5 +35,13 @@ public class Rekening {
         }
         saldo -= jumlah;
         return true;
+    }
+
+    private String formatRupiah(int uang) {
+        return "Rp" + String.format("%,d", uang).replace(',', '.');
+    }
+
+    public void cetakInfo() {
+        System.out.printf("%s | %-6s | %12s%n", nomor, pemilik, formatRupiah(saldo));
     }
 }
