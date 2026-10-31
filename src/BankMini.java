@@ -5,6 +5,9 @@ public class BankMini {
         Scanner input = new Scanner(System.in);
         Rekening rekening = new Rekening("001", "Ani", 100000);
 
+        //Error: java: saldo has private access in Rekening
+        rekening.saldo = 1000000;
+
         System.out.println("============ BANK MINI ============");
         System.out.println("Rekening " + rekening.getNomor() + " a.n. " + rekening.getPemilik());
 
@@ -25,8 +28,12 @@ public class BankMini {
             } else if (pilihan == 3) {
                 rekening.cetakInfo();
             } else if (pilihan != 0) {
-                System.out.println("Menu tidak dikenal");
+                System.out.println("Menu tidak tersedia");
             }
         } while (pilihan != 0);
+
+        System.out.println();
+        System.out.println("=========== SALDO AKHIR ===========");
+        rekening.cetakInfo();
     }
 }
